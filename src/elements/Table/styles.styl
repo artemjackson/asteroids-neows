@@ -1,0 +1,80 @@
+@import '~root/variables'
+
+.container
+  overflow hidden
+  width 100%
+  position relative
+  z-index 1
+  border-radius 5px
+  background-color white
+  box-shadow 0 5px 20px -5px gray
+
+
+// Table
+.table
+  table-layout fixed
+  width 100%
+  border-collapse collapse
+
+.head
+  color blue
+  text-align left
+
+.row
+  border 1px solid lighten(gray, 20)
+  text-align left
+
+  &:hover
+    background-color light-gray
+
+.column
+  padding 10px
+
+.row
+  &:last-child
+    border-bottom none
+
+  .column
+
+    &:first-child
+      border-left none
+
+    &:last-child
+      border-right none
+
+.clickable
+  cursor pointer
+
+.preloader
+  height 3px
+
+// THead
+toggle-size = 0.75em
+
+.toggle
+  position relative
+  padding-left toggle-size
+  cursor pointer
+  user-select none
+
+  &:before
+    position absolute
+    top 7px
+    left 0
+    font-size toggle-size
+    content ("\25BE")
+
+  &:after
+    position absolute
+    bottom 7px
+    left 0
+    font-size toggle-size
+    content ("\25B4")
+
+  &.asc
+    &:before
+      opacity 0.5
+
+  &.desc
+    &:after
+      opacity 0.5
